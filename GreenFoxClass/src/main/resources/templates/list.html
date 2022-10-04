@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List of Students</title>
+    <link rel = "stylesheet" th:href = "@{/style.css}">
+</head>
+<body>
+    <table>
+        <tr>
+            <th>NAME</th>
+        </tr>
+        <tr th:each="list, iter : ${list}">
+            <td>
+                <span th:text = "*{list}"></span>
+            </td>
+        </tr>
+    </table>
+    <form>
+        <div class="button">
+            <form th:action = "@{/gfa}" action = '#' method="get">
+                <input type = "submit" value ="Back to Main">
+            </form>
+        </div>
+    </form>
+</body>
+</html>
